@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Dodaj zadanie</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+            crossorigin="anonymous"></script>
+</head>
+<body>
+
+<div style="width: 100%; max-width: 1000px; margin: 100px auto">
+
+<!--<form method="post" th:action="@{/saveTask}" th:object="${task}">-->
+    <form method="post" action="/saveTask" >
+        <div class="col-6">
+            <div class="form-group">
+                <label for="name">Nazwa zadania</label>
+                <input type="text" class="form-control" name="name" id="name" placeholder="Nazwa zadania">
+            </div>
+            <div class="form-group">
+                <label for="description">Opis zadania</label>
+                <input type="text" class="form-control" name="description" id="description" placeholder="Opis zadania">
+            </div>
+            <div class="form-group">
+                <label for="category">Kategoria</label>
+                <input type="text" class="form-control" name="description" id="category" placeholder="Kategoria">
+<!--                <select class="form-select" th:field="*{category}">-->
+<!--                    <option selected disabled hidden value="select">Wybierz kategorie</option>-->
+<!--                    <option th:value="'HOME'" th:text="Obowiązki domowe"></option>-->
+<!--                    <option th:value="'WORK'" th:text="Obowiązki zawodowe"></option>-->
+<!--                    <option th:value="'HOBBY'" th:text="Hobby"></option>-->
+<!--                </select>-->
+            </div>
+            <div class="col-md-2">
+                <p>Zrealizowane</p>
+            </div>
+            <div class="col-md-2">
+                <div>
+                    <input type="radio" name="realized" id="yup" checked>
+                    <label for="yup">Tak</label>
+                </div>
+                <div>
+                    <input type="radio" name="realized" id="nope">
+                    <label for="nope">Nie</label>
+                </div>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary mb-2">Dodaj</button>
+    </form>
+</div>
+
+</body>
+</html>
